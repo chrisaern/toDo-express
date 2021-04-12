@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+<link rel="stylesheet" href="styles.css">
+<section class="hero is-primary">
+    <div class="hero-body has-text-centered">
+        <p class="title is-1">
+        Hei,
+        </p>
+        <p class="subtitle is-3">
+        <%= name %>
+        </p>
+        <p class="subtitle taskCount pb-2 is-4">
+
+        </p>
+        <i class="fas fa-angle-down fa-lg"></i>
+    </div>
+</section>
+<section>
+    <div class="container column is-one-third my-4">
+        <div class="box">
+                <div class="toDoIcon has-text-centered">
+                    <span class="icon-text">
+                        <span class="icon is-medium">
+                          <i class="fas fa-file fa-lg"></i>
+                        </span>
+                        <span class="title">Oppgaver</span>
+                    </span>
+                    <hr>
+                </div>
+            <div class="todos">
+                <form id="delete" action="/remove" method="POST">
+                    <input type="text" name="title">
+                    <input type="submit">
+                </form>
+            </div>
+          </div>
+        <div class="has-text-centered">
+        <button onclick="showModal()" class="button is-link is-rounded">
+            <span class="icon-text">
+                <span class="icon">
+                <i class="fas fa-plus"></i>
+                </span>
+            <span>Legg til oppgave</span>
+        </span></button>
+        <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+              <header class="modal-card-head">
+                <p class="modal-card-title">Ny oppgave</p>
+                <button class="delete" aria-label="close"></button>
+              </header>
+              <section class="modal-card-body">
+                <form id="createTask" action="/create" method="POST">
+                    <input class="input" autocomplete="off" type="text" name="title" placeholder="Oppgave">
+                </form>
+              </section>
+              <footer class="modal-card-foot">
+                <button class="button is-success" form="createTask">Legg til ny oppgave</button>
+                <button class="button cancel">Avbryt</button>
+              </footer>
+            </div>
+          </div>
+        </div>
+    </div>
+</section>
+<script src="/todo.js"></script>
+

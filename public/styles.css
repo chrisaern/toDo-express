@@ -1,0 +1,41 @@
+html {
+    overflow: hidden;
+}
+
+.linethrough {
+    text-decoration: line-through;
+}
+
+.todo:hover {
+    text-decoration: line-through;
+}
+
+.todo {
+    z-index: 10;
+}
+
+#delete {
+    display: none;
+}
+
+.box {
+    height: 350px;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    padding-top: 0;
+}
+
+.box::-webkit-scrollbar {
+    display: none;
+}
+
+.toDoIcon {
+    padding-top: 15px;
+    margin: 0;
+    background-color: white;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+}
+
